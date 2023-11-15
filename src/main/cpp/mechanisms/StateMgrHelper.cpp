@@ -24,31 +24,19 @@
 #include <mechanisms/MechanismTypes.h>
 #include <mechanisms/StateMgrHelper.h>
 #include <mechanisms/StateStruc.h>
-#include <mechanisms/example/ExampleState.h>
-#include <mechanisms/example/ExampleStateMgr.h>
 #include <utils/Logger.h>
-#include <mechanisms/ARM/armState.h>
-#include <mechanisms/ARM/ArmStateMgr.h>
-#include <mechanisms/flagarm/FlagArmState.h>
-#include <mechanisms/flagarm/FlagArmStateManager.h>
-#include <mechanisms/intake/IntakeState.h>
-#include <mechanisms/intake/IntakeStateManager.h>
-#include <mechanisms/release/ReleaseState.h>
-#include <mechanisms/release/ReleaseStateMgr.h>
 
 using namespace std;
 
 void StateMgrHelper::InitStateMgrs()
 {
-    //ExampleStateMgr::GetInstance();
-    IntakeStateMgr::GetInstance();
-    ArmStateMgr::GetInstance();
-    ReleaseStateMgr::GetInstance();
-    FlagArmStateManager::GetInstance();
+    // @ADDMECH get mechanism instances 
 }
 
 void StateMgrHelper::RunCurrentMechanismStates() 
 {
+    // @ADDMECH Loop through the mechanisms and run their current state 
+    /**
     for (auto i=MechanismTypes::MECHANISM_TYPE::EXAMPLE+1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
     {
         auto mech = MechanismFactory::GetMechanismFactory()->GetMechanism(static_cast<MechanismTypes::MECHANISM_TYPE>(i));
@@ -57,7 +45,8 @@ void StateMgrHelper::RunCurrentMechanismStates()
         {
             stateMgr->RunCurrentState();
         }
-    }   
+    }  
+    **/ 
 }
 
 void StateMgrHelper::SetMechanismStateFromParam
@@ -68,6 +57,8 @@ void StateMgrHelper::SetMechanismStateFromParam
 
     if (params != nullptr)
     {
+        // @ADDMECH Loop through the mechanisms and set state 
+        /**
         for (auto i=MechanismTypes::MECHANISM_TYPE::EXAMPLE+1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
         {
             auto mech = MechanismFactory::GetMechanismFactory()->GetMechanism(static_cast<MechanismTypes::MECHANISM_TYPE>(i));
@@ -81,6 +72,7 @@ void StateMgrHelper::SetMechanismStateFromParam
                 }
             }
         }   
+        **/
     }
 }
 
@@ -105,26 +97,6 @@ State* StateMgrHelper::CreateState
     State* thisState = nullptr;
     switch (type)
     {
-        case StateType::EXAMPLE_STATE:
-            thisState = new ExampleState(xmlString, id, controlData, target);
-            break;
-
-        case StateType::ARM_STATE:
-            thisState = new ArmState(xmlString, id, controlData, target);
-            break;
-
-        case StateType::FLAGARM_STATE:
-            thisState = new FlagArmState(xmlString, id, target);
-            break;
-
-        case StateType::INTAKE_STATE:
-            thisState = new IntakeState(xmlString, id, controlData, target);
-            break;
-        
-        case StateType::RELEASE_STATE:
-            thisState = new ReleaseState(xmlString, id, target, secondaryTarget);
-            break;
-
         // @ADDMECH Add case(s) to create your state(s) 
         //case StateType::SHOOTER:
         //    thisState = new ShooterState(xmlSgtring, 

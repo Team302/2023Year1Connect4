@@ -38,11 +38,6 @@
 #include <mechanisms/MechanismTypes.h>
 #include <utils/Logger.h>
 // @ADDMECH include for your mechanism 
-#include <mechanisms/example/Example.h>
-#include <mechanisms/ARM/arm.h>
-#include <mechanisms/flagarm/FlagArm.h>
-#include <mechanisms/intake/Intake.h>
-#include <mechanisms/release/release.h>
 
 // Third Party Includes
 #include <ctre/phoenix/sensors/CANCoder.h>
@@ -68,12 +63,7 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory() : m_arm(nullptr),
-									   m_example(nullptr),
-									   m_flag(nullptr),
-									   m_intake(nullptr),
-									   m_release(nullptr)
-									   // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory() // @ADDMECH Initialize mechanism to NULLPTR
 {
 }
 
@@ -99,43 +89,10 @@ void MechanismFactory::CreateMechanism
 {
 
 	// Create the mechanism
+	/*
 	switch ( type )
 	{
-		case MechanismTypes::MECHANISM_TYPE::EXAMPLE:
-		{
-			auto motor = GetMotorController(motorControllers, MotorControllerUsage::EXAMPLE);
-			m_example = new Example(controlFileName, networkTableName, motor);
-		}
-		break;
-		// @ADDMECH  Add case for Mechanism
-		case MechanismTypes::MECHANISM_TYPE::ARM:
-		{
-			auto motor = GetMotorController(motorControllers, MotorControllerUsage::ARM);
-			m_arm = new arm(controlFileName, networkTableName, motor);
-		}
-		break;
 
-		case MechanismTypes::MECHANISM_TYPE::FLAGARM:
-		{
-			auto servo = GetServo(servos, ServoUsage::SERVO_USAGE::FLAG_SERVO);
-			m_flag = new FlagArm(controlFileName, networkTableName, servo);
-		}
-		break;
-
-		case MechanismTypes::MECHANISM_TYPE::INTAKE:
-		{
-			auto motor = GetMotorController(motorControllers, MotorControllerUsage::INTAKE);
-			m_intake = new Intake(controlFileName, networkTableName, motor);
-		}
-		break;
-
-		case MechanismTypes::MECHANISM_TYPE::RELEASE:
-		{
-			auto servo1 = GetServo(servos, ServoUsage::SERVO_USAGE::RELEASE_SERVO);
-			auto servo2 = GetServo(servos, ServoUsage::SERVO_USAGE::RELEASE_SERVO2);
-			m_release = new release(controlFileName, networkTableName, servo1, servo2);
-		}
-		break;
 
 		default:
 		{
@@ -145,6 +102,7 @@ void MechanismFactory::CreateMechanism
 		}
 		break;
 	}
+	*/
 }
 
 
@@ -153,33 +111,7 @@ Mech* MechanismFactory::GetMechanism
 	MechanismTypes::MECHANISM_TYPE	type
 ) const
 {
-	switch (type)
-	{
-		case MechanismTypes::MECHANISM_TYPE::EXAMPLE:
-			return m_example;
-			break;
 
-		// @ADDMECH  Add case for Mechanism
-		case MechanismTypes::MECHANISM_TYPE::ARM:
-		    return m_arm;
-			break;
-
-		case MechanismTypes::MECHANISM_TYPE::FLAGARM:
-			return m_flag;
-			break;
-
-		case MechanismTypes::MECHANISM_TYPE::INTAKE:
-			return m_intake;
-			break;
-		
-		case MechanismTypes::MECHANISM_TYPE::RELEASE:
-			return m_release;
-			break;
-
-		default:
-			return nullptr;
-			break;
-	}
 	return nullptr;
 }
 

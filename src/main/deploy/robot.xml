@@ -118,8 +118,8 @@
                networkTable="IntakeNT" 
                controlFile="intake.xml"> 
           <motor usage="INTAKE" 
-                 canId="6" 
-                 pdpID="6" 
+                 canId="1" 
+                 pdpID="1" 
                  type="TALONSRX" 
                  inverted="true" 
                  sensorInverted="false" 

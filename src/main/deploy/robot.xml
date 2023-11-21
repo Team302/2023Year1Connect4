@@ -161,7 +161,7 @@
      </mechanism>
 
 <!-- ====================================================
-     Ball Release
+     Ball Delivery
      ====================================================  -->
      <mechanism type= "DELIVERY"
                 networkTable="BallDelivery"

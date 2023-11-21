@@ -116,12 +116,12 @@ void TeleopControl::Initialize()
 		m_controllerIndex[ HOLONOMIC_DRIVE_ROTATE]			= ctrlNo;
 		m_axisIDs[HOLONOMIC_DRIVE_ROTATE]					= IDragonGamePad::RIGHT_JOYSTICK_X;
 
-		m_controllerIndex[INTAKE_BALLZ] 					= ctrlNo;  
-		m_buttonIDs[INTAKE_BALLZ]	 						= IDragonGamePad::RIGHT_BUMPER;	
-		m_controllerIndex[EXPEL_BALLZ]						= ctrlNo;
-		m_buttonIDs[EXPEL_BALLZ]							= IDragonGamePad::B_BUTTON;
-		m_controllerIndex[DELIVER_BALLZ]					= ctrlNo;
-		m_buttonIDs[DELIVER_BALLZ]							= IDragonGamePad::LEFT_BUMPER;
+		m_controllerIndex[INTAKE_BALLS] 					= ctrlNo;  
+		m_buttonIDs[INTAKE_BALLS]	 						= IDragonGamePad::RIGHT_BUMPER;	
+		m_controllerIndex[EXPEL_BALLS]						= ctrlNo;
+		m_buttonIDs[EXPEL_BALLS]							= IDragonGamePad::B_BUTTON;
+		m_controllerIndex[DELIVER_BALLS]					= ctrlNo;
+		m_buttonIDs[DELIVER_BALLS]							= IDragonGamePad::LEFT_BUMPER;
 
 
 		// m_controllerIndex[ REZERO_PIGEON ]					= ctrlNo;

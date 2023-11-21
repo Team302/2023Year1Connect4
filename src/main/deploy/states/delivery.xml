@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+    <mechanismTarget stateIdentifier= "DELIVERY_CLOSED"
+                     controlDataIdentifier= "openloop"
+                     value = "0.0">
+    <mechanismTarget stateIdentifier= "DELIVERY_OPEN"
+                     controlDataIdentifier= "openloop"
+                     value = "180.0">
+</statedata>

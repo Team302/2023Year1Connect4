@@ -163,19 +163,14 @@
 <!-- ====================================================
      Ball Release
      ====================================================  -->
-     <mechanism type= "RELEASE"
-                networkTable="BallReleaseNT"
-                controlFile="release.xml">
-          <servo usage="RELEASE_SERVO"
+     <mechanism type= "DELIVERY"
+                networkTable="BallDelivery"
+                controlFile="delivery.xml">
+          <servo usage="DELIVERY_SERVO"
                  pwmId="0"
                  minAngle="0.0"
                  maxAngle="360.0"
                  pwmId="0"/>
-          <servo usage="RELEASE_SERVO2"
-                 pwmId="1"
-                 minAngle="0.0"
-                 maxAngle="360.0"
-                 pwmId="1"/>
      </mechanism>
 
 <!-- ====================================================

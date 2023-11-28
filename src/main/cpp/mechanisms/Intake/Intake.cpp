@@ -9,13 +9,10 @@ Intake::Intake(
     std::string networkTableName,
     std::shared_ptr<IDragonMotorController> Intake_Controller) : Mech1IndMotor(MechanismTypes::MechanismTypes::MECHANISM_TYPE::INTAKE, controlFileName, networkTableName, Intake_Controller)
 {
-    void Intake::Update()
+
+}
+ void Intake::Update()
     {
         Mech1IndMotor::Update();
     }
-   
 
-
-
-
-}

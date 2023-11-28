@@ -34,7 +34,7 @@ class MechanismTypes
         enum MECHANISM_TYPE
         {
             UNKNOWN_MECHANISM = -1,
-            // @ADDMECH add your mechanism 
+            DELIVERY,
             MAX_MECHANISM_TYPES
         };
 

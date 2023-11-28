@@ -12,9 +12,9 @@ class Intake : public Mech1IndMotor
 {
 public:
   Intake(
-  std::shared_ptr<IDragonMotorController> Intake_Controller,
   std::string controlFileName, 
-  std::string networkTableName
+  std::string networkTableName,
+  std::shared_ptr<IDragonMotorController> Intake_Controller
   );
   Intake() = delete;
   ~Intake() = default;

@@ -40,7 +40,7 @@
 #include <hw/usages/ServoMap.h>
 #include <mechanisms/MechanismTypes.h>
 #include <mechanisms/base/Mech.h>
-
+#include <mechanisms/Delivery/Delivery.h>
 
 
 // @ADDMECH include for your mechanism 
@@ -79,6 +79,7 @@ class MechanismFactory
 		);
 				
 		// @ADDMECH  Add inline Get method for your mechanism
+	Delivery* GetDelivery()const { return m_delivery; };
 
 		Mech* GetMechanism
 		(
@@ -120,4 +121,5 @@ class MechanismFactory
 		static MechanismFactory*	m_mechanismFactory;
 
 		// @ADDMECH  Add your mechanism here		
+		Delivery* m_delivery;
 };

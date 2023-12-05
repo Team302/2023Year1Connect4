@@ -63,7 +63,7 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory() // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory () : m_intake(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
 {
 }
 

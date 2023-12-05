@@ -63,7 +63,8 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory() // @ADDMECH Initialize mechanism to NULLPTR
+
+MechanismFactory::MechanismFactory(): m_conveyor(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
 {
 }
 

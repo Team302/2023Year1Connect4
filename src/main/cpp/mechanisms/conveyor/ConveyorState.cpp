@@ -6,8 +6,12 @@
 
 using namespace std;
 
-ConveyorState::ConveyorState(
+ConveyorState::Mech1IndMotorState(
     string stateName,
     int stateID,
     ControlData *control0,
-    double target0) : 
+    double target0) : Mech1IndMotorState(MechanismFactory::getMechanismFactory()->getConveyor(), stateName, stateID, *control0);
+            m_conveyor(MechanismFactory::getMechanismFactory()->getConveyor()){}
+bool AtTarget() const {
+    return true;
+}

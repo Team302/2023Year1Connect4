@@ -40,7 +40,7 @@
 #include <hw/usages/ServoMap.h>
 #include <mechanisms/MechanismTypes.h>
 #include <mechanisms/base/Mech.h>
-
+#include <mechanisms/conveyor/Conveyor.h>
 
 
 // @ADDMECH include for your mechanism 
@@ -79,7 +79,7 @@ class MechanismFactory
 		);
 				
 		// @ADDMECH  Add inline Get method for your mechanism
-
+Conveyor *getConveyor() const{return m_conveyor;}
 		Mech* GetMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE	type
@@ -119,5 +119,6 @@ class MechanismFactory
 
 		static MechanismFactory*	m_mechanismFactory;
 
-		// @ADDMECH  Add your mechanism here		
+		// @ADDMECH  Add your mechanism here	
+		Conveyor* m_conveyor;
 };

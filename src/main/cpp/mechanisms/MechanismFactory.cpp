@@ -63,7 +63,7 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory () : m_intake(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory () : m_Intake(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
 {
 }
 
@@ -89,10 +89,20 @@ void MechanismFactory::CreateMechanism
 {
 
 	// Create the mechanism
-	/*
+	
 	switch ( type )
 	{
 
+		case MechanismTypes::INTAKE:
+		{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::INTAKE);
+			if (motor.get() !=nullptr)
+			{
+				m_Intake = new Intake(controlFileName, networkTableName, motor);
+			}
+
+
+		}
 
 		default:
 		{
@@ -102,7 +112,7 @@ void MechanismFactory::CreateMechanism
 		}
 		break;
 	}
-	*/
+	
 }
 
 

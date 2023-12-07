@@ -49,6 +49,7 @@ class MotorControllerUsage
             MECANUM_LEFT_BACK,
             MECANUM_RIGHT_FRONT,
             MECANUM_RIGHT_BACK,
+            INTAKE_MOTOR,
             INTAKE,
             INTAKE2,
             ARM,

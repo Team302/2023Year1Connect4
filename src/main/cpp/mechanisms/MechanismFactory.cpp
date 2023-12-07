@@ -90,9 +90,10 @@ void MechanismFactory::CreateMechanism
 {
 
 	// Create the mechanism
-	/*
+	
 	switch ( type )
 	{
+		case::MechanismTypes::CONVEYOR_MECHANISM:{}
 
 
 		default:
@@ -103,7 +104,7 @@ void MechanismFactory::CreateMechanism
 		}
 		break;
 	}
-	*/
+	
 }
 
 

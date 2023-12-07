@@ -93,7 +93,12 @@ void MechanismFactory::CreateMechanism
 	
 	switch ( type )
 	{
-		case::MechanismTypes::CONVEYOR_MECHANISM:{}
+		case::MechanismTypes::CONVEYOR_MECHANISM:{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::CONVEYOR_MOTOR);
+			if (motor.get() != nullptr){
+				m_conveyor = new Conveyor(controlFileName, networkTableName, motor);
+			}
+		}
 
 
 		default:

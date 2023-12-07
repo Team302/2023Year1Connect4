@@ -53,6 +53,7 @@ class MotorControllerUsage
             INTAKE2,
             ARM,
             EXAMPLE,
+            CONVEYOR_MOTOR,
             MAX_MOTOR_CONTROLLER_USAGES
         };
 

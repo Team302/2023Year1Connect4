@@ -171,7 +171,6 @@ shared_ptr<IDragonMotorController> DragonMotorControllerFactory::CreateMotorCont
         smax->InvertEncoder( sensorInverted );
         smax->EnableCurrentLimiting( enableCurrentLimit );
         smax->SetSmartCurrentLimiting( continuousCurrentLimit );
-        printf("Setting SparkMax current limit to %d\n", continuousCurrentLimit);
 
         /**  TODO:  implement follower logic
         if ( followMotor > -1 )
@@ -236,4 +235,8 @@ void DragonMotorControllerFactory::CreateTypeMap()
 {
     m_typeMap["TALONSRX"] = DragonMotorControllerFactory::MOTOR_TYPE::TALONSRX;
     m_typeMap["FALCON"] = DragonMotorControllerFactory::MOTOR_TYPE::FALCON;
+    m_typeMap["BRUSHLESS_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHLESS_SPARK_MAX;
+    m_typeMap["BRUSHED_SPARK_MAX"] = DragonMotorControllerFactory::MOTOR_TYPE::BRUSHED_SPARK_MAX;
+
 }
+        	

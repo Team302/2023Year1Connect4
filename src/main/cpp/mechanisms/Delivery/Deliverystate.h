@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
-#include <mechanisms/base/Mech1ServoState.h>
+#include <mechanisms/base/Mech1MotorState.h>
 
 class ControlData;
 class Delivery;
 
-class DeliveryState : public Mech1ServoState
+class DeliveryState : public Mech1MotorState
 {
   public:
     DeliveryState() = delete;

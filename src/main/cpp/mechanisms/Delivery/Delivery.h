@@ -4,13 +4,13 @@
 #include <memory>
 
 //Team 302 Includes
-#include <mechanisms/base/Mech1Servo.h>
+#include <mechanisms/base/Mech1IndMotor.h>
 
-class Delivery : public Mech1Servo
+class Delivery : public Mech1IndMotor
 {
     public:
         Delivery(
-            DragonServo* servo,
+            std::shared_ptr<IDragonMotorController> motorController,
             std::string controlFileName,
             std::string networkTableName
             );

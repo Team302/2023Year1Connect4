@@ -93,9 +93,9 @@ void MechanismFactory::CreateMechanism
 	switch ( type )
 	{
 		case MechanismTypes::DELIVERY:{
-			auto motor = GetMotorController(motorControllers, MotorControllerUsage::ARM);
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::DELIVERY);
 			if(motor.get() != nullptr){
-				m_delivery = new Delivery(controlFileName, networkTableName, motor);
+				m_delivery = new Delivery(motor, controlFileName, networkTableName);
 			}
 		}
 

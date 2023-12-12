@@ -166,11 +166,24 @@
      <mechanism type= "DELIVERY"
                 networkTable="BallDelivery"
                 controlFile="delivery.xml">
-          <servo usage="DELIVERY_SERVO"
-                 pwmId="0"
-                 minAngle="0.0"
-                 maxAngle="360.0"
-                 pwmId="0"/>
+          <motor usage="DELIVERY"
+                 canId="11"
+                 pdpID="11"
+                 type="SPARKMAX"
+                 inverted="false"
+                 sensorInverted="false"
+                 feedbackDevice="NONE" 
+                 countsPerRev="0" 
+                 gearRatio="1.0" 
+                 brakeMode="true" 
+                 peakCurrentDuration="50" 
+                 continuousCurrentLimit="50" 
+                 peakCurrentLimit="50" 
+                 currentLimiting="true"              
+                 forwardlimitswitch="true" 
+                 forwardlimitswitchopen="true" 
+                 reverselimitswitch="true" 
+                 reverselimitswitchopen="true"/> 
      </mechanism>
 
 <!-- ====================================================

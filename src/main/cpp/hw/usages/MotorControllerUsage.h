@@ -53,7 +53,7 @@ class MotorControllerUsage
             INTAKE2,
             ARM,
             EXAMPLE,
-            DELIVERY_SERVO,
+            DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
 

@@ -118,8 +118,8 @@
                networkTable="IntakeNT" 
                controlFile="intake.xml"> 
           <motor usage="INTAKE" 
-                 canId="6" 
-                 pdpID="6" 
+                 canId="1" 
+                 pdpID="1" 
                  type="TALONSRX" 
                  inverted="true" 
                  sensorInverted="false" 
@@ -134,16 +134,16 @@
      </mechanism>
 
 <!-- ====================================================
-     Arm
+     Conveyer
      ====================================================  -->
-     <mechanism type= "ARM"
-               networkTable="ArmNT"
-               controlFile="arm.xml">
-          <motor usage="ARM"
+     <mechanism type= "CONVEYER"
+               networkTable="ConveyerNT"
+               controlFile="conveyer.xml">
+          <motor usage="CONVEYER"
                  canId="10"
                  pdpID="10"
-                 type="TALONSRX"
-                 inverted="true"
+                 type="TALONFX"
+                 inverted="false"
                  sensorInverted="false"
                  feedbackDevice="NONE" 
                  countsPerRev="0" 
@@ -161,21 +161,16 @@
      </mechanism>
 
 <!-- ====================================================
-     Ball Release
+     Ball Delivery
      ====================================================  -->
-     <mechanism type= "RELEASE"
-                networkTable="BallReleaseNT"
-                controlFile="release.xml">
-          <servo usage="RELEASE_SERVO"
+     <mechanism type= "DELIVERY"
+                networkTable="BallDelivery"
+                controlFile="delivery.xml">
+          <servo usage="DELIVERY_SERVO"
                  pwmId="0"
                  minAngle="0.0"
                  maxAngle="360.0"
                  pwmId="0"/>
-          <servo usage="RELEASE_SERVO2"
-                 pwmId="1"
-                 minAngle="0.0"
-                 maxAngle="360.0"
-                 pwmId="1"/>
      </mechanism>
 
 <!-- ====================================================

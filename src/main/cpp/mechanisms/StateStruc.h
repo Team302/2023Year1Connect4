@@ -20,6 +20,7 @@
 enum StateType
 {
     // @ADDMECH Add your states
+    DELIVERY,
     MAX_STATE_TYPES
 };
 

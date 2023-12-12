@@ -1,8 +1,8 @@
 #include <mechanisms/Delivery/Delivery.h>
 Delivery::Delivery(
-    DragonServo* servo,
+    std::shared_ptr<IDragonMotorController> motorController,
     std::string controlFileName,
     std::string networkTableName
-):Mech1Servo(MechanismTypes::MECHANISM_TYPE::DELIVERY, controlFileName, networkTableName, servo)
+):Mech1IndMotor(MechanismTypes::MECHANISM_TYPE::DELIVERY, controlFileName, networkTableName, motorController)
 {}
 

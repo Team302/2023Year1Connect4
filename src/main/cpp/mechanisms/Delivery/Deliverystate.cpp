@@ -9,10 +9,11 @@ DeliveryState::DeliveryState(
     string stateName,
     int stateId,
     ControlData *control0,
-    double target0) : Mech1ServoState(MechanismFactory::GetMechanismFactory()->GetDelivery(), stateName, stateId, target0), m_delivery(MechanismFactory::GetMechanismFactory()->GetDelivery())
-    {
+    double target0) : Mech1MotorState(MechanismFactory::GetMechanismFactory()->GetDelivery(), stateName, stateId, control0, target0), 
+                      m_delivery(MechanismFactory::GetMechanismFactory()->GetDelivery())
+{
 
-    }
+}
 
 bool DeliveryState::AtTarget() const
     {

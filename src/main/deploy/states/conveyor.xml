@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE statedata SYSTEM "stateData.dtd">
+<statedata>
+	<controlData identifier="openloop" 
+	             mode="PERCENT_OUTPUT"/>
+	<mechanismTarget stateIdentifier="CONVEYOR_OFF"
+	                 controlDataIdentifier="openloop"
+					 controlDataIdentifier="openloop"
+					 value="0.0"/>
+	<mechanismTarget stateIdentifier="CONVEYOR_LIFT"
+	                 controlDataIdentifier="openloop"
+					 controlDataIdentifier="openloop"
+					 value="1.0"/>
+	<mechanismTarget stateIdentifier="CONVEYOR_DELIVERY"
+	                 controlDataIdentifier="openloop"
+					 controlDataIdentifier="openloop"
+					 value="0.5" />
+	<mechanismTarget stateIdentifier="CONVEYOR_DELIFT"
+	                 controlDataIdentifier="openloop"
+					 controlDataIdentifier="openloop"
+					 value="-1.0" />
+</statedata>

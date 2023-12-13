@@ -1,13 +1,13 @@
 #pragma once 
 #include <string>
 
-#include <mechanisms/base/Mech1IndMotorState.h>
+#include <mechanisms/base/Mech1MotorState.h>
 
 
 
 class Intake;
 
-class IntakeState : public Mech1IndMotorState
+class IntakeState : public Mech1MotorState
 {
 public:
     IntakeState() = delete;
@@ -24,4 +24,4 @@ public:
 private:
   Intake *m_Intake;
 
-}
+};

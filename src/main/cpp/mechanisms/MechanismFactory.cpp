@@ -63,7 +63,8 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory():m_delivery(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory(): m_conveyor(nullptr), // @ADDMECH Initialize mechanism to NULLPTR
+                                      m_delivery(nullptr)
 {
 }
 
@@ -92,6 +93,14 @@ void MechanismFactory::CreateMechanism
 	
 	switch ( type )
 	{
+		case::MechanismTypes::CONVEYOR_MECHANISM:{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::CONVEYOR_MOTOR);
+			if (motor.get() != nullptr){
+				m_conveyor = new Conveyor(controlFileName, networkTableName, motor);
+			}
+			break;
+		}
+
 		case MechanismTypes::DELIVERY:{
 			auto motor = GetMotorController(motorControllers, MotorControllerUsage::DELIVERY);
 			if(motor.get() != nullptr){

@@ -58,10 +58,10 @@ MotorControllerUsage::MotorControllerUsage()
     m_usageMap["INTAKE2"]  = MOTOR_CONTROLLER_USAGE::INTAKE2;
     m_usageMap["EXAMPLE"]   = MOTOR_CONTROLLER_USAGE::EXAMPLE;
     m_usageMap["ARM"]   = MOTOR_CONTROLLER_USAGE::ARM;
+    m_usageMap["CONVEYOR"] = MOTOR_CONTROLLER_USAGE::CONVEYOR_MOTOR;
 
     m_usageMap["DELIVERY"]   = MOTOR_CONTROLLER_USAGE::DELIVERY;
 }
-
 MotorControllerUsage::~MotorControllerUsage()
 {
     m_usageMap.clear();

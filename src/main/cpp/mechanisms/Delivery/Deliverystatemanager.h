@@ -24,6 +24,8 @@ void CheckForStateTransition() override;
 private:
 DeliveryStateMgr();
 ~DeliveryStateMgr() = default;
+DELIVERY_STATE m_currentState;
+DELIVERY_STATE m_targetState;
 
 Delivery* m_delivery;
 

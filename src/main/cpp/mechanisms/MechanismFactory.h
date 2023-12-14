@@ -41,6 +41,7 @@
 #include <mechanisms/MechanismTypes.h>
 #include <mechanisms/base/Mech.h>
 #include <mechanisms/conveyor/Conveyor.h>
+#include <mechanisms/Delivery/Delivery.h>
 
 
 // @ADDMECH include for your mechanism 
@@ -79,7 +80,10 @@ class MechanismFactory
 		);
 				
 		// @ADDMECH  Add inline Get method for your mechanism
-Conveyor *getConveyor() const{return m_conveyor;}
+
+  Conveyor *GetConveyor() const { return m_conveyor; }
+	Delivery *GetDelivery() const { return m_delivery; }
+
 		Mech* GetMechanism
 		(
 			MechanismTypes::MECHANISM_TYPE	type
@@ -119,8 +123,6 @@ Conveyor *getConveyor() const{return m_conveyor;}
 
 		static MechanismFactory*	m_mechanismFactory;
 
-		// @ADDMECH  Add your mechanism here	
-		Conveyor* m_conveyor;
-
-		
+		Conveyor* m_conveyor;	
+		Delivery* m_delivery;
 };

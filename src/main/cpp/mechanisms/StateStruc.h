@@ -21,6 +21,7 @@ enum StateType
 {
     // @ADDMECH Add your states
     CONVEYOR_STATE,
+    DELIVERY,
     MAX_STATE_TYPES
 };
 

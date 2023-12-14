@@ -54,8 +54,11 @@ class MotorControllerUsage
             ARM,
             EXAMPLE,
             CONVEYOR_MOTOR,
+            DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
+
+
 
         static MotorControllerUsage* GetInstance();
 

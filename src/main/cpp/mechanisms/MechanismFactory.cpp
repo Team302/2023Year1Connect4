@@ -63,8 +63,8 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-
-MechanismFactory::MechanismFactory(): m_conveyor(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory(): m_conveyor(nullptr), // @ADDMECH Initialize mechanism to NULLPTR
+                                      m_delivery(nullptr)
 {
 }
 
@@ -101,6 +101,12 @@ void MechanismFactory::CreateMechanism
 			break;
 		}
 
+		case MechanismTypes::DELIVERY:{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::DELIVERY);
+			if(motor.get() != nullptr){
+				m_delivery = new Delivery(motor, controlFileName, networkTableName);
+			}
+		}
 
 		default:
 		{

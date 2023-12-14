@@ -35,7 +35,7 @@ class MechanismTypes
         {
             UNKNOWN_MECHANISM = -1,
             CONVEYOR_MECHANISM,
-            // @ADDMECH add your mechanism 
+            DELIVERY,
             MAX_MECHANISM_TYPES
         };
 

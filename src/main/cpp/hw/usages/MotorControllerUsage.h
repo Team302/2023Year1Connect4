@@ -53,8 +53,11 @@ class MotorControllerUsage
             INTAKE2,
             ARM,
             EXAMPLE,
+            DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
+
+
 
         static MotorControllerUsage* GetInstance();
 

@@ -63,7 +63,7 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory() // @ADDMECH Initialize mechanism to NULLPTR
+MechanismFactory::MechanismFactory():m_delivery(nullptr) // @ADDMECH Initialize mechanism to NULLPTR
 {
 }
 
@@ -89,10 +89,15 @@ void MechanismFactory::CreateMechanism
 {
 
 	// Create the mechanism
-	/*
+	
 	switch ( type )
 	{
-
+		case MechanismTypes::DELIVERY:{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::DELIVERY);
+			if(motor.get() != nullptr){
+				m_delivery = new Delivery(motor, controlFileName, networkTableName);
+			}
+		}
 
 		default:
 		{
@@ -102,7 +107,7 @@ void MechanismFactory::CreateMechanism
 		}
 		break;
 	}
-	*/
+	
 }
 
 

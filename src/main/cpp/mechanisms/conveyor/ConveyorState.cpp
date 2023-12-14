@@ -16,6 +16,6 @@ ConveyorState::ConveyorState(
 
 }
 
-bool AtTarget() {
+bool ConveyorState::AtTarget() const {
     return true;
 }

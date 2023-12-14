@@ -61,6 +61,10 @@ class MechanismFactory
 {
 	public:
 
+
+		
+
+
 		static MechanismFactory* GetMechanismFactory();
 
 
@@ -80,7 +84,7 @@ class MechanismFactory
 				
 		// @ADDMECH  Add inline Get method for your mechanism
 		
-		Intake* GetIntake() {return m_intake;}
+		Intake* GetIntake() {return m_Intake;}
 
 
 
@@ -124,6 +128,7 @@ class MechanismFactory
 		static MechanismFactory*	m_mechanismFactory;
 
 		// @ADDMECH  Add your mechanism here	
-		Intake *m_intake;
+
+		Intake* m_Intake;
 
 };

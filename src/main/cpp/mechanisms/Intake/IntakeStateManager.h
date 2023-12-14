@@ -1,4 +1,4 @@
-#pragma once;
+#pragma once
 #include <mechanisms/base/StateMgr.h>
 #include <mechanisms/Intake/Intake.h>
 #include <mechanisms/StateStruc.h>
@@ -11,12 +11,12 @@ class IntakeStateMgr : public StateMgr
 
 
     static IntakeStateMgr* GetInstance();
-    void CheckForStateTransition() ovveride;
+    void CheckForStateTransition() override;
 
     enum INTAKE_STATE
     {
-    INTAKE_ON,
-    INTAKE_REVERSE,
+    INTAKE_INTAKING,
+    INTAKE_EXPEL,
     INTAKE_OFF
     }; 
 
@@ -24,15 +24,10 @@ class IntakeStateMgr : public StateMgr
 
     const std::map<const std::string, INTAKE_STATE> m_intakeXmlStringToStateEnumMap{
         {"INTAKE_OFF", INTAKE_STATE::INTAKE_OFF},
-        {"INTAKE_INTAKING", INTAKE_STATE::TNTAKE_ON}
-        {"INTAKE_EXPELLING", INTAKE_STATE::INTAKE_REVERSE}
+        {"INTAKE_INTAKING", INTAKE_STATE::INTAKE_INTAKING},
+        {"INTAKE_EXPELLING", INTAKE_STATE::INTAKE_EXPEL}
 
     };
-
-    int GetCurrentStateParam
-    (
-        PrimitiveParams* currentParams
-    ) override;
 
    private:
         IntakeStateMgr();
@@ -41,11 +36,12 @@ class IntakeStateMgr : public StateMgr
         Intake* m_intake;
 
         static IntakeStateMgr* m_instance;
-        const StateStrc m_offState   = {INTAKE_STATE::INTAKE_OFF, m_intakeOffXmlString, StateType::INTAKE_STATE, true};
-        const StateStruct m_onState  = {INTAKE_STATE::INTAKE_ON, m_intakeIntakeXmlString, StateType::INTAKE_STATE, false};
-        const StateexpelState        = {INTAKE_STATE::INTAKE_EXPEL, m_intakeExpelXmlString, StateType::INTAKE_STATE, false};
+        const StateStruc m_offState          = {INTAKE_STATE::INTAKE_OFF, "INTAKE_OFF", StateType::INTAKE_STATE, true};
+        const StateStruc m_onState           = {INTAKE_STATE::INTAKE_INTAKING, "INTAKE_INTAKING", StateType::INTAKE_STATE, false};
+        const StateStruc m_expelState        = {INTAKE_STATE::INTAKE_EXPEL, "INTAKE_EXPEL", StateType::INTAKE_STATE, false};
 
-
+        INTAKE_STATE m_currentState;
+        INTAKE_STATE m_targetState;
 
 
 

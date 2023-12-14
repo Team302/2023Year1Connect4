@@ -3,7 +3,8 @@
 #include<string>
 
 //Team 302 Includes
-#include <mechanisms/base/Mech1IndMotor.h>
+
+#include <mechanisms/base/Mech1IndMotor.h> 
 
 #include <memory>
 
@@ -18,8 +19,6 @@ public:
   );
   Intake() = delete;
   ~Intake() = default;
-
-  void Update() override;
   
 
 };

@@ -101,7 +101,7 @@ void MechanismFactory::CreateMechanism
 				m_Intake = new Intake(controlFileName, networkTableName, motor);
 			}
 
-
+			break;
 		}
 
 		default:

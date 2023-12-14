@@ -16,6 +16,18 @@ class ConveyorStateMgr : public StateMgr {
 {"LIFTING", CONVEYORSTATE::LIFTING},
 {"DELIFTING", CONVEYORSTATE::DELIFTING}
     };
+    static ConveyorStateMgr* GetInstance();
+    void CheckForStateTransition() override;
 
+    private:
+    ConveyorStateMgr();
+    ~ConveyorStateMgr() = default;
+
+    Conveyor*           m_conveyor;
+    static ConveyorStateMgr* m_instance;
+    const StateStruc m_offState ={CONVEYORSTATE::OFF, "OFF", StateType::CONVEYOR_STATE, true};
+    const StateStruc m_liftingState ={CONVEYORSTATE::LIFTING, "LIFTING", StateType::CONVEYOR_STATE, false};
+    const StateStruc m_deliftingState ={CONVEYORSTATE::DELIFTING, "DELIFTING", StateType::CONVEYOR_STATE, false};
+CONVEYORSTATE m_currentstate;
+CONVEYORSTATE m_targetstate;
 };
-

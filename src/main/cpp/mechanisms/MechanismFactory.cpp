@@ -98,6 +98,7 @@ void MechanismFactory::CreateMechanism
 			if (motor.get() != nullptr){
 				m_conveyor = new Conveyor(controlFileName, networkTableName, motor);
 			}
+			break;
 		}
 
 

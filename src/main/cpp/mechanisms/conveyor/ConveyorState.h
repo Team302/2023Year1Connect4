@@ -3,17 +3,17 @@
 #include <string>
 
 //Team 302 Includes
-#include <mechanisms/base/Mech1IndMotorState.h>
+#include <mechanisms/base/Mech1MotorState.h>
 
 class ControlData;
 class Conveyor;
-class ConveyorState : public Mech1IndMotorState{
+class ConveyorState : public Mech1MotorState{
     public:
     ConveyorState() = delete;
     ConveyorState(
         std::string stateName,
         int stateID,
-        ControlData *control0,
+        ControlData* control0,
         double target0
     );
     ~ConveyorState()=default;

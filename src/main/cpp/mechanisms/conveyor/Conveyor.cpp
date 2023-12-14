@@ -7,7 +7,3 @@ std::string ControlFileConveyor,
 std::string NetworkFileConveyor,
 std::shared_ptr<IDragonMotorController> motorController) : Mech1IndMotor(MechanismTypes::MECHANISM_TYPE::CONVEYOR_MECHANISM, ControlFileConveyor, NetworkFileConveyor, motorController)
 {}
-
-void Conveyor::Update(){
-    Mech1IndMotor::Update();
-}

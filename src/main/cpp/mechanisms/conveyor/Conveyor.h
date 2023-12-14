@@ -15,5 +15,4 @@ std::shared_ptr<IDragonMotorController> motorController
 Conveyor()= delete;
 ~Conveyor()=default;
 
-void Update() override;
 };

@@ -48,6 +48,7 @@ class TeleopControl
             INTAKE_BALLS,
             EXPEL_BALLS,
             DELIVER_BALLS,
+            
 
             MAX_FUNCTIONS
         };

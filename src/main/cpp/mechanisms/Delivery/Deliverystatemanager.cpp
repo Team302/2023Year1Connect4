@@ -17,14 +17,15 @@ DeliveryStateMgr* DeliveryStateMgr::GetInstance()
         {
             DeliveryStateMgr::m_instance = new DeliveryStateMgr;
         }
-
     }
+
+    return DeliveryStateMgr::m_instance;
 }
 
 DeliveryStateMgr::DeliveryStateMgr() : StateMgr(),
-                                     m_delivery(MechanismFactory::GetMechanismFactory()->GetDelivery()),
                                      m_currentState(DELIVERY_STATE::OFF),
-                                     m_targetState(DELIVERY_STATE::OFF)
+                                     m_targetState(DELIVERY_STATE::OFF),
+                                     m_delivery(MechanismFactory::GetMechanismFactory()->GetDelivery())
 
 
 {

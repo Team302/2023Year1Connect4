@@ -12,9 +12,12 @@ IntakeState::IntakeState(
     string stateName,
     int stateID,
     ControlData *control0,
-    double target0) : Mech1MotorState(MechanismFactory::GetMechanismFactory()->GetIntake(), stateName, stateName, stateId, control0, target0), 
+    double target0) : Mech1MotorState(MechanismFactory::GetMechanismFactory()->GetIntake(), stateName, stateID, control0, target0), 
              m_Intake(MechanismFactory::GetMechanismFactory()->GetIntake())
 
 {}
 
 bool IntakeState::AtTarget() const
+{
+    return true;
+}

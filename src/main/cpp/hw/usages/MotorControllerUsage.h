@@ -20,6 +20,7 @@
 #include <map>
 #include <memory>
 #include <StateMgr.h>
+#include <string>
 
 // FRC includes
 
@@ -33,10 +34,6 @@ class MotorControllerUsage
 {
 
     public:
-
-
-        static IntakeStateMgr* GetInstance();
-        void CheckForStateTransition() override;
         /// @enum MOTOR_CONTROLLER_USAGE
         /// @brief Defines motor usages.  This should be modified for each robot.
         enum MOTOR_CONTROLLER_USAGE
@@ -60,31 +57,19 @@ class MotorControllerUsage
             MAX_MOTOR_CONTROLLER_USAGES
         };
 
-        static MotorControllerUsage* GetInstance();
-
         MOTOR_CONTROLLER_USAGE GetUsage
         ( 
             std::string         usageString
         );
 
+        static MotorControllerUsage* GetInstance();
 
     private:
         static MotorControllerUsage*    m_instance;
         MotorControllerUsage();
         ~MotorControllerUsage();
-        
-        static IntakeStateMgr* m_instance;
-        
 
-
-
-
-
-
-		std::map <std::string, MOTOR_CONTROLLER_USAGE> m_usageMap;
-        const StateStruc m_offStruc = {INTKAE_STATE::INTAKE_OFF, m_intakeXmlString, StateType::INTAKE_STATE, true};
-        const StateStruc m_onState = {INTAKE_STATE::INTAKE_STATE, m_}
-//NOT DONE YET!!!!!!!!!!!!!!!!!!
+        std::map <std::string, MOTOR_CONTROLLER_USAGE> m_usageMap;
 };
 
 

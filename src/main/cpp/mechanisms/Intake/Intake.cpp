@@ -11,8 +11,4 @@ Intake::Intake(
 {
 
 }
- void Intake::Update()
-    {
-        Mech1IndMotor::Update();
-    }
 

@@ -7,8 +7,6 @@
 
 class IntakeStateMgr : public StateMgr
 {
-    //FIX SOMTHING HERE.
-
 
     static IntakeStateMgr* GetInstance();
     void CheckForStateTransition() ovveride;

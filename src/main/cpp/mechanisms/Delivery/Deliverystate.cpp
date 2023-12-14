@@ -17,5 +17,5 @@ DeliveryState::DeliveryState(
 
 bool DeliveryState::AtTarget() const
     {
-        return m_delivery;
+        return true;
     }

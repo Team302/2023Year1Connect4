@@ -10,8 +10,8 @@ ConveyorState::ConveyorState(
     string stateName,
     int stateID,
     ControlData* control0,
-    double target0) : Mech1MotorState(MechanismFactory::GetMechanismFactory()->getConveyor(), stateName, stateID, control0, target0),
-            m_conveyor(MechanismFactory::GetMechanismFactory()->getConveyor())
+    double target0) : Mech1MotorState(MechanismFactory::GetMechanismFactory()->GetConveyor(), stateName, stateID, control0, target0),
+            m_conveyor(MechanismFactory::GetMechanismFactory()->GetConveyor())
 {
 
 }

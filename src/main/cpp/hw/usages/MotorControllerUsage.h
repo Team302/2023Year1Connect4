@@ -54,9 +54,11 @@ class MotorControllerUsage
             INTAKE2,
             ARM,
             EXAMPLE,
+            CONVEYOR_MOTOR,
+            DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
-
+  
         MOTOR_CONTROLLER_USAGE GetUsage
         ( 
             std::string         usageString

@@ -139,8 +139,21 @@ Mech* MechanismFactory::GetMechanism
 	MechanismTypes::MECHANISM_TYPE	type
 ) const
 {
-
-	return nullptr;
+	switch (type)
+	{
+		case MechanismTypes::MECHANISM_TYPE::CONVEYOR_MECHANISM:
+			return m_conveyor;
+			break;
+		case MechanismTypes::MECHANISM_TYPE::DELIVERY:
+			return m_delivery;
+			break;
+		case MechanismTypes::MECHANISM_TYPE::INTAKE:
+			return m_Intake;
+			break;
+		default:
+			return nullptr;
+			break;
+	}
 }
 
 

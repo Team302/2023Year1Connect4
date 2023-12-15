@@ -12,9 +12,9 @@ class ConveyorStateMgr : public StateMgr {
         DELIFTING
     };
     const std::map<const std::string, CONVEYORSTATE> m_conveyorXmlStringToStateEnumMap{
-{"OFF", CONVEYORSTATE::OFF},
-{"LIFTING", CONVEYORSTATE::LIFTING},
-{"DELIFTING", CONVEYORSTATE::DELIFTING}
+{"CONVEYOR_OFF", CONVEYORSTATE::OFF},
+{"CONVEYOR_LIFT", CONVEYORSTATE::LIFTING},
+{"CONVEYOR_DELIFT", CONVEYORSTATE::DELIFTING}
     };
     static ConveyorStateMgr* GetInstance();
     void CheckForStateTransition() override;
@@ -25,9 +25,9 @@ class ConveyorStateMgr : public StateMgr {
 
     Conveyor*           m_conveyor;
     static ConveyorStateMgr* m_instance;
-    const StateStruc m_offState ={CONVEYORSTATE::OFF, "OFF", StateType::CONVEYOR_STATE, true};
-    const StateStruc m_liftingState ={CONVEYORSTATE::LIFTING, "LIFTING", StateType::CONVEYOR_STATE, false};
-    const StateStruc m_deliftingState ={CONVEYORSTATE::DELIFTING, "DELIFTING", StateType::CONVEYOR_STATE, false};
+    const StateStruc m_offState ={CONVEYORSTATE::OFF, "CONVEYOR_OFF", StateType::CONVEYOR_STATE, true};
+    const StateStruc m_liftingState ={CONVEYORSTATE::LIFTING, "CONVEYOR_LIFT", StateType::CONVEYOR_STATE, false};
+    const StateStruc m_deliftingState ={CONVEYORSTATE::DELIFTING, "CONVEYOR_DELIFT", StateType::CONVEYOR_STATE, false};
 CONVEYORSTATE m_currentstate;
 CONVEYORSTATE m_targetstate;
 };

@@ -5,14 +5,11 @@
 	             mode="PERCENT_OUTPUT"/>
 	<mechanismTarget stateIdentifier="INTAKE_OFF"
 	                 controlDataIdentifier="openloop"
-					         controlDataIdentifier="openloop"
 					         value="0.0"/>
 	<mechanismTarget stateIdentifier="INTAKE_INTAKING"
 	                 controlDataIdentifier="openloop"
-					         controlDataIdentifier="openloop"
 					         value="1.0"/>
 	<mechanismTarget stateIdentifier="INTAKE_EXPEL"
 	                 controlDataIdentifier="openloop"
-					         controlDataIdentifier="openloop"
 					         value="-1.0" />
 </statedata>

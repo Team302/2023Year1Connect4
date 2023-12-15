@@ -5,7 +5,7 @@
           type="CTRE"/>
      <pigeon canId="0"
              usage="CENTER_OF_ROTATION"
-             type="pigeon1"
+             type="pigeon2"
              rotation="0.0"/>
      <roborio orientation="X_FORWARD_Y_LEFT"/>
 
@@ -17,16 +17,16 @@
               wheelDiameter="4.0"
               wheelBase="21.0"  
               track="21.0"
-              maxVelocity="1.0"
+              maxVelocity="2.5"
               maxAngularVelocity="1"
-              maxAcceleration="1"
+              maxAcceleration="2.0"
               maxAngularAcceleration="1"
               networkTable="ChassisNT"
               controlFile="chassis.xml">
 			 
             <motor  usage="MECANUM_LEFT_FRONT"
-                    canId="7"
-                    pdpID="7"
+                    canId="15"
+                    pdpID="15"
                     type="TALONSRX"
                     inverted="true"
                     sensorInverted="false"
@@ -46,8 +46,8 @@
                     reverselimitswitch="false"
                     reverselimitswitchopen="true"/>                  
              <motor  usage="MECANUM_LEFT_BACK"
-                    canId="5"
-                    pdpID="5"
+                    canId="14"
+                    pdpID="14"
                     type="TALONSRX"
                     inverted="true"
                     sensorInverted="false"
@@ -68,8 +68,8 @@
                     reverselimitswitchopen="true"/>        
   			 
             <motor  usage="MECANUM_RIGHT_FRONT"
-                    canId="8"
-                    pdpID="8"
+                    canId="1"
+                    pdpID="1"
                     type="TALONSRX"
                     inverted="false"
                     sensorInverted="false"
@@ -89,8 +89,8 @@
                     reverselimitswitch="false"
                     reverselimitswitchopen="true"/>                  
              <motor  usage="MECANUM_RIGHT_BACK"
-                    canId="9"
-                    pdpID="9"
+                    canId="3"
+                    pdpID="3"
                     type="TALONSRX"
                     inverted="false"
                     sensorInverted="false"
@@ -114,13 +114,14 @@
 <!-- ====================================================
      Intake
      ====================================================  -->
+     <!--
      <mechanism type="INTAKE" 
                networkTable="IntakeNT" 
                controlFile="intake.xml"> 
           <motor usage="INTAKE" 
-                 canId="1" 
-                 pdpID="1" 
-                 type="TALONSRX" 
+                 canId="2" 
+                 pdpID="2" 
+                 type="BRUSHLESS_SPARK_MAX" 
                  inverted="true" 
                  sensorInverted="false" 
                  feedbackDevice="NONE" 
@@ -132,17 +133,17 @@
                  peakCurrentLimit="50" 
                  currentLimiting="true"/>
      </mechanism>
-
+-->
 <!-- ====================================================
      Conveyer
      ====================================================  -->
-     <mechanism type= "CONVEYER"
+     <mechanism type= "CONVEYOR"
                networkTable="ConveyerNT"
-               controlFile="conveyer.xml">
-          <motor usage="CONVEYER"
-                 canId="10"
-                 pdpID="10"
-                 type="TALONFX"
+               controlFile="conveyor.xml">
+          <motor usage="CONVEYOR"
+                 canId="0"
+                 pdpID="0"
+                 type="TALONSRX"
                  inverted="false"
                  sensorInverted="false"
                  feedbackDevice="NONE" 
@@ -167,9 +168,9 @@
                 networkTable="BallDelivery"
                 controlFile="delivery.xml">
           <motor usage="DELIVERY"
-                 canId="11"
-                 pdpID="11"
-                 type="SPARKMAX"
+                 canId="13"
+                 pdpID="13"
+                 type="TALONSRX"
                  inverted="false"
                  sensorInverted="false"
                  feedbackDevice="NONE" 

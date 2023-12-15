@@ -7,7 +7,7 @@
 
 class IntakeStateMgr : public StateMgr
 {
-
+    public:
     static IntakeStateMgr* GetInstance();
     void CheckForStateTransition() override;
 

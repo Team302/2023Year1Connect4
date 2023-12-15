@@ -16,7 +16,7 @@ class DeliveryStateMgr : public StateMgr
 
     const std::map<const std::string, DELIVERY_STATE> m_deliveryXmlStringToStateEnumMap{ 
         {"DELIVERY_OFF", DELIVERY_STATE::OFF},
-        {"DELIVERY_DELIVERING", DELIVERY_STATE::DELIVERING}
+        {"DELIVERY_DELIVER", DELIVERY_STATE::DELIVERING}
     };
     static DeliveryStateMgr* GetInstance();
 void CheckForStateTransition() override;
@@ -31,7 +31,7 @@ Delivery* m_delivery;
 
 static DeliveryStateMgr* m_instance;
 const StateStruc m_offState = {DELIVERY_STATE::OFF, "DELIVERY_OFF", StateType::DELIVERY, true};
-const StateStruc m_deliveringState = {DELIVERY_STATE::DELIVERING, "DELIVERY_DELIVERING", StateType::DELIVERY, false};
+const StateStruc m_deliveringState = {DELIVERY_STATE::DELIVERING, "DELIVERY_DELIVER", StateType::DELIVERY, false};
 
 
 };

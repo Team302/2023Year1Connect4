@@ -63,8 +63,10 @@ MechanismFactory* MechanismFactory::GetMechanismFactory()
 
 }
 
-MechanismFactory::MechanismFactory(): m_conveyor(nullptr), // @ADDMECH Initialize mechanism to NULLPTR
-                                      m_delivery(nullptr)
+
+MechanismFactory::MechanismFactory () : m_Intake(nullptr), // @ADDMECH Initialize mechanism to NULLPTR
+                                        m_conveyor(nullptr), // @ADDMECH Initialize mechanism to NULLPTR
+                                        m_delivery(nullptr)
 {
 }
 
@@ -100,6 +102,17 @@ void MechanismFactory::CreateMechanism
 			}
 			break;
 		}
+
+		case MechanismTypes::INTAKE:
+		{
+			auto motor = GetMotorController(motorControllers, MotorControllerUsage::INTAKE);
+			if (motor.get() !=nullptr)
+			{
+				m_Intake = new Intake(controlFileName, networkTableName, motor);
+			}
+
+			break;
+      }
 
 		case MechanismTypes::DELIVERY:{
 			auto motor = GetMotorController(motorControllers, MotorControllerUsage::DELIVERY);

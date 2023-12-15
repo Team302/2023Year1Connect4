@@ -34,6 +34,7 @@ class MechanismTypes
         enum MECHANISM_TYPE
         {
             UNKNOWN_MECHANISM = -1,
+            INTAKE,
             CONVEYOR_MECHANISM,
             DELIVERY,
             MAX_MECHANISM_TYPES

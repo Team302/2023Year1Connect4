@@ -7,9 +7,9 @@ using namespace std;
 
 ConveyorStateMgr* ConveyorStateMgr::m_instance = nullptr;
 ConveyorStateMgr* ConveyorStateMgr::GetInstance(){
-    if(ConveyorStateMgr::m_instance=nullptr){
+    if(ConveyorStateMgr::m_instance==nullptr){
         auto mechFactory = MechanismFactory::GetMechanismFactory();
-        auto conveyor = mechFactory->getConveyor();
+        auto conveyor = mechFactory->GetConveyor();
         if (conveyor !=nullptr){
             ConveyorStateMgr::m_instance=new ConveyorStateMgr();
         }
@@ -18,7 +18,7 @@ ConveyorStateMgr* ConveyorStateMgr::GetInstance(){
 }
 
 ConveyorStateMgr::ConveyorStateMgr() : StateMgr(),
-                    m_conveyor(MechanismFactory::GetMechanismFactory()->getConveyor()),
+                    m_conveyor(MechanismFactory::GetMechanismFactory()->GetConveyor()),
                     m_currentstate(CONVEYORSTATE::OFF),
                     m_targetstate(CONVEYORSTATE::OFF)
 {

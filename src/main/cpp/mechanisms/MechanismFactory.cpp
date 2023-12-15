@@ -106,6 +106,7 @@ void MechanismFactory::CreateMechanism
 			if(motor.get() != nullptr){
 				m_delivery = new Delivery(motor, controlFileName, networkTableName);
 			}
+			break;
 		}
 
 		default:

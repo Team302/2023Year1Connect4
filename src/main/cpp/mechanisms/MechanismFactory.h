@@ -40,9 +40,9 @@
 #include <hw/usages/ServoMap.h>
 #include <mechanisms/MechanismTypes.h>
 #include <mechanisms/base/Mech.h>
+#include <mechanisms/Intake/Intake.h>
 #include <mechanisms/conveyor/Conveyor.h>
 #include <mechanisms/Delivery/Delivery.h>
-
 
 // @ADDMECH include for your mechanism 
 
@@ -61,10 +61,8 @@ class Mech;
 class MechanismFactory
 {
 	public:
-
 		static MechanismFactory* GetMechanismFactory();
-
-
+  
 		/// @brief    Find or create the requested mechanism
 		void  CreateMechanism
 		(
@@ -80,9 +78,10 @@ class MechanismFactory
 		);
 				
 		// @ADDMECH  Add inline Get method for your mechanism
-
-  Conveyor *GetConveyor() const { return m_conveyor; }
-	Delivery *GetDelivery() const { return m_delivery; }
+		
+		Intake* GetIntake() {return m_Intake;}
+    Conveyor *GetConveyor() const { return m_conveyor; }
+	  Delivery *GetDelivery() const { return m_delivery; }
 
 		Mech* GetMechanism
 		(
@@ -122,7 +121,8 @@ class MechanismFactory
 		virtual ~MechanismFactory() = default;
 
 		static MechanismFactory*	m_mechanismFactory;
-
+  
+		Intake* m_Intake;
 		Conveyor* m_conveyor;	
 		Delivery* m_delivery;
 };

@@ -19,6 +19,7 @@
 // C++ Includes
 #include <map>
 #include <memory>
+#include <StateMgr.h>
 #include <string>
 
 // FRC includes
@@ -33,7 +34,6 @@ class MotorControllerUsage
 {
 
     public:
-
         /// @enum MOTOR_CONTROLLER_USAGE
         /// @brief Defines motor usages.  This should be modified for each robot.
         enum MOTOR_CONTROLLER_USAGE
@@ -49,6 +49,7 @@ class MotorControllerUsage
             MECANUM_LEFT_BACK,
             MECANUM_RIGHT_FRONT,
             MECANUM_RIGHT_BACK,
+            INTAKE_MOTOR,
             INTAKE,
             INTAKE2,
             ARM,
@@ -57,24 +58,20 @@ class MotorControllerUsage
             DELIVERY,
             MAX_MOTOR_CONTROLLER_USAGES
         };
-
-
-
-        static MotorControllerUsage* GetInstance();
-
+  
         MOTOR_CONTROLLER_USAGE GetUsage
         ( 
             std::string         usageString
         );
 
+        static MotorControllerUsage* GetInstance();
 
     private:
         static MotorControllerUsage*    m_instance;
         MotorControllerUsage();
         ~MotorControllerUsage();
-        
-		std::map <std::string, MOTOR_CONTROLLER_USAGE> m_usageMap;
 
+        std::map <std::string, MOTOR_CONTROLLER_USAGE> m_usageMap;
 };
 
 

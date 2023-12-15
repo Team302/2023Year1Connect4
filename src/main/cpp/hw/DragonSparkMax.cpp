@@ -15,18 +15,18 @@ DragonSparkMax::DragonSparkMax( int id,
                                 m_gearRatio(gearRatio),
                                 m_deviceType(deviceType)
 {
-    m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 0);
-    m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 1);
+    // m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 0);
+    // m_spark->GetPIDController().SetOutputRange(-1.0, 1.0, 1);
     // m_spark->GetEncoder()
     // m_spark->
     // m_spark->SetParameter(CANSparkMaxLowLevel::ConfigParameter::kHallOffset, 0);
     // m_spark->RestoreFactoryDefaults();
     // m_spark->SetReverse(true);
     m_spark->RestoreFactoryDefaults();
-    m_spark->SetOpenLoopRampRate(0.09); //0.2 0.25
-    m_spark->SetClosedLoopRampRate(0.02);
-    m_spark->GetEncoder().SetPosition(0);
-    SetRotationOffset(0);
+    // m_spark->SetOpenLoopRampRate(0.09); //0.2 0.25
+    // m_spark->SetClosedLoopRampRate(0.02);
+    // m_spark->GetEncoder().SetPosition(0)
+    // SetRotationOffset(0);
 }
 
 double DragonSparkMax::GetRotations() const
@@ -36,7 +36,8 @@ double DragonSparkMax::GetRotations() const
 
 double DragonSparkMax::GetRPS() const
 {
-    return m_spark->GetEncoder().GetVelocity() / 60.0;
+    return 1.0;
+    // return m_spark->GetEncoder().GetVelocity() / 60.0;
 }
 
 MotorControllerUsage::MOTOR_CONTROLLER_USAGE DragonSparkMax::GetType() const
@@ -51,6 +52,7 @@ int DragonSparkMax::GetID() const
 
 void DragonSparkMax::SetControlConstants(int slot, ControlData* controlInfo)
 {
+    return;
     if (controlInfo != nullptr)
     {
         switch (controlInfo->GetMode())
@@ -141,7 +143,8 @@ void DragonSparkMax::Invert(bool inverted)
 
 double DragonSparkMax::GetRotationsWithGearNoOffset() const
 {
-    return m_spark->GetEncoder().GetPosition() * m_gearRatio;
+    return m_gearRatio;
+    // return m_spark->GetEncoder().GetPosition() * m_gearRatio;
 }
 
 void DragonSparkMax::InvertEncoder(bool inverted)

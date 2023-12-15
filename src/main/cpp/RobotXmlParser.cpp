@@ -158,5 +158,6 @@ void RobotXmlParser::ParseXML()
     catch(const std::exception& e)
     {
         Logger::GetLogger()->LogData(LOGGER_LEVEL::ERROR_ONCE, string("RobotXmlParser"), string("ParseXML"), string("Error thrown while parsing robot.xml") );
+        
     }
 }

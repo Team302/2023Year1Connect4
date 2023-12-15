@@ -119,9 +119,9 @@ void TeleopControl::Initialize()
 		m_controllerIndex[INTAKE_BALLS] 					= ctrlNo;  
 		m_buttonIDs[INTAKE_BALLS]	 						= IDragonGamePad::RIGHT_BUMPER;	
 		m_controllerIndex[EXPEL_BALLS]						= ctrlNo;
-		m_buttonIDs[EXPEL_BALLS]							= IDragonGamePad::B_BUTTON;
+		m_buttonIDs[EXPEL_BALLS]							= IDragonGamePad::LEFT_BUMPER;
 		m_controllerIndex[DELIVER_BALLS]					= ctrlNo;
-		m_buttonIDs[DELIVER_BALLS]							= IDragonGamePad::LEFT_BUMPER;
+		m_buttonIDs[DELIVER_BALLS]							= IDragonGamePad::Y_BUTTON;
 		
 
 		// m_controllerIndex[ REZERO_PIGEON ]					= ctrlNo;

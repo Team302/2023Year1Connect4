@@ -8,8 +8,8 @@
 					         value="0.0"/>
 	<mechanismTarget stateIdentifier="INTAKE_INTAKING"
 	                 controlDataIdentifier="openloop"
-					         value="1.0"/>
+					         value="-1.0"/>
 	<mechanismTarget stateIdentifier="INTAKE_EXPEL"
 	                 controlDataIdentifier="openloop"
-					         value="-1.0" />
+					         value="1.0" />
 </statedata>

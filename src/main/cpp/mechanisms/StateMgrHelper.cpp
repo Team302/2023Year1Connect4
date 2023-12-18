@@ -26,18 +26,28 @@
 #include <mechanisms/StateStruc.h>
 #include <utils/Logger.h>
 
+#include <mechanisms/conveyor/ConveyorStateMgr.h>
+#include <mechanisms/conveyor/ConveyorState.h>
+#include <mechanisms/Delivery/Deliverystatemanager.h>
+#include <mechanisms/Delivery/Deliverystate.h>
+#include <mechanisms/Intake/IntakeStateManager.h>
+#include <mechanisms/Intake/IntakeState.h>
+
 using namespace std;
 
 void StateMgrHelper::InitStateMgrs()
 {
     // @ADDMECH get mechanism instances 
+    ConveyorStateMgr::GetInstance();
+    DeliveryStateMgr::GetInstance();
+    IntakeStateMgr::GetInstance();
 }
 
 void StateMgrHelper::RunCurrentMechanismStates() 
 {
     // @ADDMECH Loop through the mechanisms and run their current state 
-    /**
-    for (auto i=MechanismTypes::MECHANISM_TYPE::EXAMPLE+1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
+    
+    for (auto i=MechanismTypes::MECHANISM_TYPE::UNKNOWN_MECHANISM +1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
     {
         auto mech = MechanismFactory::GetMechanismFactory()->GetMechanism(static_cast<MechanismTypes::MECHANISM_TYPE>(i));
         auto stateMgr = mech != nullptr ? mech->GetStateMgr() : nullptr;
@@ -45,8 +55,7 @@ void StateMgrHelper::RunCurrentMechanismStates()
         {
             stateMgr->RunCurrentState();
         }
-    }  
-    **/ 
+    }   
 }
 
 void StateMgrHelper::SetMechanismStateFromParam
@@ -58,8 +67,8 @@ void StateMgrHelper::SetMechanismStateFromParam
     if (params != nullptr)
     {
         // @ADDMECH Loop through the mechanisms and set state 
-        /**
-        for (auto i=MechanismTypes::MECHANISM_TYPE::EXAMPLE+1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
+
+        for (auto i=MechanismTypes::MECHANISM_TYPE::UNKNOWN_MECHANISM +1; i<MechanismTypes::MECHANISM_TYPE::MAX_MECHANISM_TYPES; ++i)
         {
             auto mech = MechanismFactory::GetMechanismFactory()->GetMechanism(static_cast<MechanismTypes::MECHANISM_TYPE>(i));
             auto stateMgr = mech != nullptr ? mech->GetStateMgr() : nullptr;
@@ -72,7 +81,6 @@ void StateMgrHelper::SetMechanismStateFromParam
                 }
             }
         }   
-        **/
     }
 }
 
@@ -98,13 +106,25 @@ State* StateMgrHelper::CreateState
     switch (type)
     {
         // @ADDMECH Add case(s) to create your state(s) 
-        //case StateType::SHOOTER:
-        //    thisState = new ShooterState(xmlSgtring, 
-        //                                 controlData, 
-        //                                 controlData2, 
-        //                                 target, 
-        //                                 secondaryTarget);
-        //    break;
+        case StateType::CONVEYOR_STATE:
+           thisState = new ConveyorState(xmlString, 
+                                        id,
+                                        controlData,  
+                                        target);
+           break;
+        case StateType::INTAKE_STATE:
+           thisState = new IntakeState(xmlString, 
+                                        id,
+                                        controlData,  
+                                        target);
+           break;
+        
+        case StateType::DELIVERY:
+           thisState = new DeliveryState(xmlString, 
+                                        id,
+                                        controlData,  
+                                        target);
+           break;
 
         default:
             Logger::GetLogger()->LogData(LOGGER_LEVEL::ERROR_ONCE, mech->GetNetworkTableName(), string("StateMgr::StateMgr"), string("unknown state"));

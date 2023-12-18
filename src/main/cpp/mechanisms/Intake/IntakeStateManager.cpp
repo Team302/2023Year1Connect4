@@ -16,18 +16,9 @@ IntakeStateMgr* IntakeStateMgr::GetInstance()
         if (intake != nullptr)
         {
             IntakeStateMgr::m_instance = new IntakeStateMgr();
-
-    
         }
-    
-    
-    
-    
     }
     return IntakeStateMgr::m_instance;
-
-
-
 }
 
 IntakeStateMgr::IntakeStateMgr() : StateMgr(),

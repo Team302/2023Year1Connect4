@@ -5,8 +5,8 @@
 	             mode="PERCENT_OUTPUT"/>
     <mechanismTarget stateIdentifier= "DELIVERY_OFF"
                      controlDataIdentifier= "openloop"
-                     value = "0.0">
+                     value = "0.0"/>
     <mechanismTarget stateIdentifier= "DELIVERY_DELIVER"
                      controlDataIdentifier= "openloop"
-                     value = "0.5">
+                     value = "1.0"/>
 </statedata>

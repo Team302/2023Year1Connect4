@@ -23,9 +23,9 @@ ConveyorStateMgr::ConveyorStateMgr() : StateMgr(),
                     m_targetstate(CONVEYORSTATE::OFF)
 {
     map<string, StateStruc> stateMap;
-    stateMap["OFF"] = m_offState;
-    stateMap["LIFTING"] = m_liftingState;
-    stateMap["DELIFTING"] = m_deliftingState;
+    stateMap["CONVEYOR_OFF"] = m_offState;
+    stateMap["CONVEYOR_LIFT"] = m_liftingState;
+    stateMap["CONVEYOR_DELIFT"] = m_deliftingState;
 
     Init(m_conveyor, stateMap);
     if (m_conveyor != nullptr){

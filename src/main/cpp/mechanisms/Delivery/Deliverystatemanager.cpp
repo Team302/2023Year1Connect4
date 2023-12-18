@@ -31,7 +31,7 @@ DeliveryStateMgr::DeliveryStateMgr() : StateMgr(),
 {
 map<string, StateStruc> stateMap;
 stateMap["DELIVERY_OFF"] = m_offState;
-stateMap["DELIVERY_DELIVERING"] = m_deliveringState;
+stateMap["DELIVERY_DELIVER"] = m_deliveringState;
 
 Init(m_delivery, stateMap);
 if (m_delivery != nullptr)
